@@ -1,0 +1,286 @@
+/* classes helper */
+
+.blueTest {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+.greenTest {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.redTest {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+}
+
+section {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#leftSide {
+    background-size: cover;
+    background-position: center;
+
+/*    background: url(../images/nicole.jpg) center/cover; */
+
+    justify-content: space-between;
+
+    color: white;
+
+    padding: 2em 1.5em 1em 1.5em;
+
+}
+
+.nicole {
+    background-image: url(../images/nicole.jpg);
+}
+
+.gabriel {
+    background-image: url(../images/gabriel.jpg);
+}
+
+.leftSide__img {
+    width: 35px;
+    vertical-align: top;
+}
+
+.leftSide__title {
+    /* on transforme le block h1 en inline-block afin d'avoir accès à toutes les props du box-model (block) mais sans retour à ligne imposé par le navigateur (inline) */
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 1rem;
+}
+
+.news {
+    text-align: right;
+    padding: 1.5em 1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px 3px black;
+
+}
+
+
+.news__title {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.news__title span {
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.news__text {
+    width: 90%;
+    margin-top: 1em;
+    margin-left: 10%;
+    line-height: 1.5;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+}
+
+.menu__link {
+    margin-left: 1.5em;
+}
+
+.menu__link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
+/* 
+utile uniquement dans la phase de développement pour positionner les enfants de la section #leftSide
+#leftSide * {
+    min-height: 100px;
+} 
+
+#rightSide * {
+    min-height: 50px;
+}
+
+*/
+
+#rightSide h1 {
+    padding: 1em;
+    background-color: #f9f9f9;
+}
+
+
+#rightSide main {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.article {
+    border: 1px solid #eaeaea;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+
+}
+
+.article__badge {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5em;
+}
+
+.article__title {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1.3em 0;
+}
+
+.badge--news {
+    background-color: #98dc62;
+}
+
+.badge--team {
+    background-color: #dc5e53;
+}
+
+.badge--work {
+    background-color: #0766f0;
+}
+
+.article__meta {
+    font-size: 0.8em;
+}
+
+.meta__icon {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.meta__author {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+.meta__date {
+    color: #aaa;
+}
+
+.article__text {
+    line-height: 1.4;
+    padding: 1em 0;
+}
+
+.article__detail {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin-top: auto;
+}
+
+.article__detail:hover {
+    color: #0056b3;
+}
+
+/* page contact.html */
+
+#contact {
+    display: flex;
+    padding: 2em;
+    margin: 1em;
+    border: 1px solid #eaeaea;
+}
+  
+#form {
+    width: 100%;
+  }
+  
+  #form fieldset {
+    border-left: 1px solid #4cced3;
+    padding: .5em 1em 0;
+    margin-bottom: 2em;
+  }
+  #form legend {
+    margin-left: -.3em;
+    font-size: 1.1em;
+  }
+  
+  .form-row {
+    display: flex;
+    margin-bottom: .4em;
+  }
+  
+  .form-row .label {
+    flex-basis: 30%;
+    margin: 0;
+    padding-right: 3%;
+  }
+  
+  /* tous les enfants direct d'un élément ayant la class form-row */
+  /* sauf les .label, vu qu'ils ont des règles plus spécifiques définies juste au dessus 😉 */
+  .form-row > * {
+    flex-basis: 70%;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-group > * {
+    margin: 0 .5em 0 0;
+  }
+  
+  /* moche mais bon, sinon la cochette prend toute la largeur (enfin, 70%), pas sûr que ça rende bien sur tous les navigateurs 🤔 */
+  #info {
+    flex-basis: 1em;
+  }
+  
+  #contact input[type=text],
+  #contact input[type=email],
+  #contact textarea,
+  #contact select
+  {
+     background-color: #f9f9f9;
+    border: none;
+    border-bottom: 1px solid #4cced3;
+  }
+  #contact input[type=email] {
+    width: 100%;
+  }
+  #contact textarea {
+    padding: .2em;
+    width: 100%;
+  }
+  #contact button {
+    background-color: #4cced3;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    padding: 5px 10px;
+  }
